@@ -7,9 +7,8 @@ const app: Express = express();
 const port: number = 3000;
 
 app.get("/", (req: Request, res: Response) => {
-  const a = tsv(schema.UserRequest, { name: "test" });
-  console.log(a);
-  res.send("Express Server");
+  const validation = tsv(schema.UserRequest, { namex: "test" });
+  res.send(validation);
 });
 
 app.listen(port, () => {
